@@ -1,0 +1,125 @@
+@charset "utf-8";
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjp.css);
+
+/* cssリセット */
+
+/*利用するタグによってこちらの内容は増やす*/
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+dl,
+dt,
+dd,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    /*デフォルトの文字色、font-familyを予め当てておく*/
+    color: #333;
+    font-family: "Noto Sans JP", "sans-serif";
+}
+
+a {
+    /*下線を消す*/
+    text-decoration: none;
+    /*色を消す*/
+    color: inherit;
+}
+
+ul {
+    /*左の「・」を消す*/
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    vertical-align: bottom;
+    border: none;
+}
+
+/*ヘッダー*/
+.header {
+    position: relative; /*相対配置*/
+}
+.header img {
+    width: 100%;
+}
+.header_wrap {
+    position: absolute; /*絶対配置*/
+    top: 0;
+    left: 0;
+}
+.logo_name {
+    font-size: 25px;
+    color: #fff;
+}
+.pc_nav ul {
+    display: flex;
+}
+.pc_nav li {
+    font-size: 20px;
+    color: #fff;
+    width: 707;
+}
+.nav_contact {
+    font-size: 26px;
+}
+.catch_copy {
+    font-size: 30px;
+    font-family: "Yu Mincho", "YuMincho";
+    color: #fff;
+    -ms-writing-mode: bt-rl; /*縦書きレイアウト*/
+    writing-mode: vertical-rl; /*縦書きレイアウト右→左*/
+}
+/*About_自己紹介*/
+.title_name {
+    color: #0094ff;
+}
+.subtitle {
+    color: #0094ff;
+}
+.title_self_introduction {
+    color: #fff;
+}
+.explanation dt {
+    color: #0094ff;
+}
+.message {
+    position: relative; /*相対配置*/
+}
+.message p {
+    position: absolute; /*絶対配置*/
+    top: 0;
+    left: 0;
+    color: #0094ff;
+}
+/*Skill_できること*/
+.star {
+    color: #d6d6d6;
+}
+.star_blue {
+    color: #9ccee5;
+}
+/*Works_作品実績*/
+.title_content {
+    color: #0094ff;
+}
+
+/*フッター*/
+/*Contact_お問い合わせ*/
+/*フッターナビ*/
+.logo_name_fotter {
+    color: #fff;
+}
+.pc_nav_footer ul {
+    display: flex;
+}
+.pc_nav_footer li {
+    color: #fff;
+}
