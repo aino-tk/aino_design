@@ -10,13 +10,22 @@ h1,
 h2,
 h3,
 h4,
-h5,
+header,
+footer,
+div,
+a,
 p,
+section,
 dl,
 dt,
 dd,
 ul,
-li {
+li,
+form,
+select,
+option,
+label,
+input {
     margin: 0;
     padding: 0;
     line-height: 1;
@@ -24,29 +33,26 @@ li {
     color: #333;
     font-family: "Noto Sans JP", "sans-serif";
 }
-
 a {
     /*下線を消す*/
     text-decoration: none;
     /*色を消す*/
     color: inherit;
 }
-
 ul {
     /*左の「・」を消す*/
     list-style: none;
 }
-
 img {
     max-width: 100%;
     vertical-align: bottom;
     border: none;
 }
-
 .body {
     max-width: 1500px;
 }
-/*ヘッダー*/
+
+/*index.html-ヘッダー*/
 .header {
     width: 100%;
     height: 100vh;
@@ -65,6 +71,7 @@ img {
 }
 .bird.-type_2 {
     animation-delay: 1s;
+    left: -5vw;
 }
 .bird.-type_2:before,
 .bird.-type_2:after {
@@ -72,6 +79,7 @@ img {
 }
 .bird.-type_3 {
     animation-delay: 3s;
+    left: -5vw;
 }
 @keyframes moving {
     0% {
@@ -258,7 +266,12 @@ img {
 .header_wrap {
     top: 0;
 }
-/*グローバルナビ*/
+/*works.htmlヘッダー*/
+.works-header {
+    width: 100%;
+}
+
+/*index.html-グローバルナビ*/
 .header_global_nav {
     position: fixed;
     height: 70px;
@@ -266,7 +279,7 @@ img {
     z-index: 999;
     display: flex;
     justify-content: space-between;
-    padding: 20px 40px;
+    padding: 20px 20px;
     box-sizing: border-box;
     transition: background-color 1s ease-in-out;
 }
@@ -276,13 +289,22 @@ img {
 .logo01 ul {
     display: flex;
 }
+.logo_mark {
+    width: 30px;
+    height: 30px;
+    line-height: 1;
+}
 .logo_name {
     font-size: 25px;
-    line-height: 1.4; /*35/25*/
+    line-height: 1.2;
     color: #fff;
 }
 .pc_nav {
     width: 53%; /*710/1366*100*/
+}
+.instagram_logo {
+    width: 30px;
+    width: 30px;
 }
 .pc_nav ul {
     display: flex;
@@ -290,7 +312,7 @@ img {
 }
 .pc_nav li {
     font-size: 20px;
-    line-height: 1.75; /*35/20*/
+    line-height: 1.5; /*35/20*/
     color: #fff;
 }
 .nav_contact {
@@ -301,6 +323,22 @@ img {
 .sp_btn {
     display: none;
 }
+/*works.html-グローバルナビ*/
+.works-header_global_nav {
+    position: fixed;
+    width: 100%;
+    background: #6b9bd6;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+    box-sizing: border-box;
+}
+.instagram_logo {
+    width: 30px;
+    width: 30px;
+}
+
 /*縦文章[海の彼方まで..]*/
 .catch_copy {
     width: 23.2vw; /*318/1366*100=23.2*/
@@ -316,9 +354,38 @@ img {
 }
 
 /*見出し設定*/
+
+/*下から上へ*/
+.scroll_up {
+    transition: 1s ease-in-out;
+    transform: translateY(40px);
+    opacity: 0;
+}
+.scroll_up.on {
+    transform: translateY(0);
+    opacity: 1;
+}
+/*左から右へ*/
+.scroll_left {
+    -webkit-transition: 1s ease-in-out;
+    -moz-transition: 1s ease-in-out;
+    -o-transition: 1s ease-in-out;
+    transition: 1s ease-in-out;
+    transform: translateX(-30px);
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -moz-opacity: 0;
+}
+.scroll_left.on {
+    opacity: 1;
+    filter: alpha(opacity=100);
+    -moz-opacity: 1;
+    transform: translateX(0);
+}
+
 .title {
     margin: 0 auto;
-    width: 40vw; /*556/1366*100*/
+    width: 50vw; /*556/1366*100*/
     height: 120px; /*画像の高さ*/
     background-image: url(../images/line_brush.png);
     background-repeat: no-repeat; /*画像が繰り返すのを防ぐ*/
@@ -447,6 +514,10 @@ img {
     margin-left: 12vw; /*158/1366*100*/
     margin-bottom: 4%; /*25/709*100*/
 }
+.instagram_link:hover {
+    color: #0094ff;
+    font-weight: bold;
+}
 .explanation_border {
     border-bottom: 1px solid #0094ff;
     content: "";
@@ -454,13 +525,15 @@ img {
     padding-bottom: 20px;
 }
 /*文章[私の名前の由来で..]*/
+/*background-size→containに変更、高さを可変か、アスペクトラティオ縦横比率で調整*/
 .message {
-    width: 93vw; /*1264/1366*100*/
+    width: 100%; /*1264/1366*100=93vw*/
     height: 768px; /*画像の高さ*/
     background-image: url(../images/about_ellipse.png);
     background-repeat: no-repeat; /*画像が繰り返すのを防ぐ*/
     background-position: center center; /*画像を中央寄せにする*/
-    background-size: 100% auto; /*背景画像を要素に合わせて表示*/
+    background-size: contain;
+    /*background-size: cover;*/
     vertical-align: top;
     display: flex;
     justify-content: center;
@@ -480,9 +553,6 @@ img {
 }
 
 /*2_Skill_できること*/
-.contents2 {
-    padding-top: 100px; /*100/1366*100*/
-}
 .skill_content {
     width: 55vw; /*841/1366*100*/
     padding-top: 3.6vh; /*50/1366*100=3.6*/
@@ -507,10 +577,12 @@ img {
 }
 /*左_デザインスキル*/
 .design_skill {
-    width: 24vw; /*325/1366*100*/
+    /*width: 24vw; /*325/1366*100*/
+    width: 100%;
+    padding-bottom: 30px;
 }
 .title_skill01 {
-    width: 22vw; /*310/1366*100*/
+    width: 21vw; /*310/1366*100*/
     height: 37px;
     border-radius: 9999px;
     background-color: #0094ff;
@@ -532,9 +604,10 @@ img {
 }
 .skill_item {
     width: 9.5vw; /*130/1366*100*/
+    text-align: center;
 }
 .skill_item p {
-    text-align: center;
+    /*text-align: center;*/
     margin-top: 25px;
 }
 .star {
@@ -546,7 +619,7 @@ img {
     color: #9ccee5;
 }
 .skill_explanation01 {
-    width: 24vw; /*330/1366*100*/
+    width: 23vw;
     display: flex;
     justify-content: space-between;
 }
@@ -561,10 +634,11 @@ img {
 }
 /*右_コーディングスキル*/
 .cording_skill {
-    width: 33vw; /*455/1366*100*/
+    /*width: 33vw; /*455/1366*100*/
+    width: 60%;
 }
 .title_skill02 {
-    width: 32vw; /*442/1366*100*/
+    width: 33vw; /*442/1366*100*/
     height: 37px;
     border-radius: 9999px;
     background-color: #0094ff;
@@ -583,12 +657,13 @@ img {
     margin-top: 30px;
     line-height: 1.3;
     padding-right: 50px;
+    font-feature-settings: "palt";
 }
 .sp_icon_conrding {
     display: none;
 }
 
-/*3_Works_作品実績*/
+/*index.html-3_Works_作品実績*/
 .contents3 {
     margin-top: 50px;
     padding-top: 100px;
@@ -660,16 +735,184 @@ img {
 .button01 a:hover:after {
     border-color: #fff;
 }
+/*works.html-3_Works_作品実績*/
+.works-contents3 {
+    padding-top: 150px;
+}
+.works-works_menu {
+    width: 80.8vw; /*1105/1366*100*/
+    margin: 0 auto;
+}
+.caption {
+    font-size: 20px;
+    line-height: 1.75; /*35/20*/
+    color: #0094ff;
+    margin-top: 40px;
+    border-bottom: 1px solid #0094ff;
+}
+.gallery ul {
+    display: flex;
+    justify-content: space-between;
+}
+.contents img {
+    width: 36.6vw; /*500/1366*100*/
+    background-color: rgb(0, 148, 255, 10%);
+    padding: 20px 5px 0 5px;
+    margin-top: 40px;
+}
+.contents p {
+    width: 36.3vw;
+    font-size: 16px;
+    line-height: 1.75;
+    color: #0094ff;
+    padding: 5px 0 5px 10px;
+    border-left: 4px solid #0094ff;
+    margin: 0 auto;
+}
+.works-button01 {
+    margin-top: 50px;
+}
+.works-button01 a {
+    display: inline-block;
+    background: rgb(208, 188, 212, 60%);
+    border-radius: 50px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    width: 185px;
+    padding: 25px 60px;
+    transition: 0.3s ease-in-out;
+    background-image: url(../images/icon_mail01.png);
+    background-repeat: no-repeat;
+    background-size: 25px 25px;
+    background-position: left 25px top 50%;
+}
+.works-button01 a:hover {
+    background: #cfbbd3;
+    color: #fff;
+    background-image: url(../images/icon_mail02.png);
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    background-position: left 30px top 50%;
+}
+.works-button01 a:after {
+    content: "";
+    width: 5px;
+    height: 5px;
+    border-top: 2px solid #333;
+    border-right: 2px solid #333;
+    transform: rotate(45deg) translateY(-50%);
+    position: absolute;
+    top: 50%;
+    right: 40px;
+    border-radius: 1px;
+    transition: 0.3s ease-in-out;
+}
+.works-button01 a:hover:after {
+    border-color: #fff;
+}
+.works-button01 br {
+    display: none;
+}
+
+/*works.index-トップへ戻るボタン*/
+.page-top {
+    position: fixed;
+    right: 10px;
+    bottom: 60px;
+    height: 20px;
+    text-decoration: none;
+    transform: rotate(90deg);
+    font-size: 18px;
+    line-height: 1.5rem;
+    color: #737373;
+    padding: 0 0 0 100px;
+    border-top: solid 2px;
+}
+.page-top:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -4px;
+    left: -15px;
+    width: 15px;
+    border-top: solid 2px;
+    transform: rotate(150deg);
+    transform-origin: right bottom;
+}
+.page-top span {
+    position: absolute;
+    top: -25px;
+    right: 10px;
+}
+
+/*works_01_作品実績*/
+.works_00 {
+    width: 90%;
+    margin: 0 auto;
+}
+.works_00 ul {
+    display: flex;
+    padding: 150px 0 100px 0;
+    box-sizing: border-box; /*paddingとborderを幅と高さに含める*/
+}
+.works_00-left {
+    width: 40%;
+    margin: 0 auto;
+    padding: 30px 30px 0 0;
+}
+.works_00-icon {
+    text-align: right;
+}
+.works_00-right {
+    width: 40%;
+    margin: 0 30px;
+}
+.works_00-title {
+    font-size: 30px;
+    color: #0094ff;
+    padding-bottom: 8px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #0094ff;
+}
+.works_00-subtitle {
+    font-size: 25px;
+    font-weight: bold;
+    float: left; /*左に寄せる*/
+    clear: left;
+    margin-right: 1.5em;
+    /*width: ; /*120/1366*100*/
+    line-height: 1.75; /*29.75/17*/
+}
+.works_00-subtitle01 {
+    font-size: 25px;
+    font-weight: bold;
+    line-height: 1.75;
+}
+.works_00-explanation {
+    font-size: 25px;
+    /*width: 40vw; /*550/1366*100*/
+    line-height: 1.75;
+    margin-left: 12vw; /*158/1366*100*/
+    margin-bottom: 4%; /*25/709*100*/
+}
+.works_00-p {
+    padding-top: 20px;
+    line-height: 2.9; /*50/17*/
+}
 
 /*フッター*/
 .footer {
     width: 100%;
-    height: 260vh;
+    /*height: 240vh;*/
     background-image: url(../images/footer_sea_code.png);
     background-repeat: no-repeat; /*画像を繰り返し表示しない*/
     background-position: center center; /*画像を常に天地左右中央配置*/
-    /*background-attachment: fixed; /*コンテンツの高さが画像の高さより大きい時動かないように固定*/
+    /*background-size: contain;*/
     background-size: cover; /*表示する大きさに基づいて背景画像を調整*/
+    padding-bottom: 40px;
 }
 .contents4_footer_nav {
     top: 0;
@@ -680,8 +923,11 @@ img {
     padding-top: 100px;
 }
 .contents4_detail {
-    width: 55%; /*750/1366*100*/
+    /*width: 55%; /*750/1366*100*/
     margin: 0 auto;
+    resize: vertical;
+    width: 750px;
+    height: 1100px;
 }
 .contact_message {
     font-size: 20px;
@@ -689,6 +935,9 @@ img {
     text-align: center;
     font-feature-settings: "palt";
     margin-top: 55px;
+}
+.sp_contact_message {
+    display: none;
 }
 .contact_form {
     margin-top: 60px;
@@ -699,7 +948,7 @@ img {
     margin-bottom: 50px;
     border: solid 1px #aaa;
     border-radius: 5px;
-    width: 370px; /*370/1366*100*/
+    width: 370px;
     color: #444;
 }
 .select:focus {
@@ -711,22 +960,50 @@ img {
     margin-bottom: 50px;
     border: solid 1px #aaa;
     border-radius: 5px;
-    width: 55vw; /*745/1366*100*/
+    width: 745px;
     color: #999;
+    resize: vertical;
 }
 .space:focus {
     outline: 1px #9a9fff solid;
     color: #333;
 }
+.space_1201 {
+    font-size: 16px;
+    padding: 10px;
+    margin-bottom: 50px;
+    border: solid 1px #aaa;
+    border-radius: 5px;
+    width: 745px;
+    color: #999;
+    resize: vertical;
+}
+.space_1201:focus {
+    outline: 1px #9a9fff solid;
+    color: #333;
+}
+.space_1200 {
+    display: none;
+}
 .contact_title {
     line-height: 1.75; /*28/16*/
+    /*vertical-align: bottom;*/
 }
-.contact_title ul {
+.contact_title p {
     display: flex;
-}
-.contact_title li {
     font-size: 16px;
     line-height: 1.75; /*28/16*/
+}
+.contact_title_1201 {
+    line-height: 1.75; /*28/16*/
+}
+.contact_title_1201 p {
+    display: flex;
+    font-size: 16px;
+    line-height: 1.75; /*28/16*/
+}
+.contact_title_1200 {
+    display: none;
 }
 .required {
     font-size: 14px;
@@ -735,7 +1012,7 @@ img {
     background-color: #ff9290;
     color: #fff;
     text-align: center;
-    line-height: 1.75;
+    line-height: 30px;
     padding: 0 20px;
     margin: 0 0 5px 10px;
 }
@@ -745,35 +1022,38 @@ img {
     border-radius: 5px;
     padding: 10px;
     height: 208px;
-    width: 55vw; /*745/1366*100*/
+    width: 745px;
 }
 .textarea:focus {
     outline: 1px #9a9fff solid;
     color: #333;
 }
 .button02 {
-    margin-top: 100px;
+    margin-top: 10px;
 }
-.button02 a {
+.button02 {
     background: #931069;
     border-radius: 50px;
+    border: none;
     position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    /*display: flex;*/
+    /*justify-content: space-between;
+    align-items: center;*/
     margin: 0 auto;
-    max-width: 150px;
+    max-width: 250px;
+    margin-top: 60px;
     padding: 15px 45px;
     transition: 0.3s ease-in-out;
     color: #fff;
     font-size: 20px;
     line-height: 1.75; /*42/24*/
+    display: block;
 }
-.button02 a:hover {
+.button02:hover {
     background: #cfbbd3;
     color: #fff;
 }
-.button02 a:after {
+.button02:after {
     content: "";
     width: 5px;
     height: 5px;
@@ -786,7 +1066,7 @@ img {
     border-radius: 1px;
     transition: 0.3s ease-in-out;
 }
-.button02 a:hover:after {
+.button02:hover:after {
     border-color: #fff;
 }
 /*フッターナビ*/
@@ -804,7 +1084,7 @@ img {
     line-height: 1.2; /*30/25*/
 }
 .pc_nav_footer {
-    margin-top: 60px; /*60/1366*100*/
+    margin-top: 40px;
 }
 .pc_nav_footer ul {
     margin: 0 auto;
@@ -817,7 +1097,121 @@ img {
     font-size: 20px;
     line-height: 1.75; /*35/20*/
 }
+.sp_nav_footer {
+    display: none;
+}
+/*works.html-フッター*/
+.works-footer {
+    margin: 60px 0 30px;
+}
+/*works.html-フッターナビ*/
+.works-logo_fotter {
+    margin-top: 0;
+}
+.logo01_fotter ul {
+    display: flex;
+    justify-content: center;
+}
+.works-logo_name_fotter {
+    color: #0094ff;
+    text-align: center;
+    font-size: 25px;
+    line-height: 1.2; /*30/25*/
+}
+.works-pc_nav_footer {
+    margin-top: 30px;
+}
+.works-pc_nav_footer ul {
+    margin: 0 auto;
+    width: 52vw; /*710/1366*100*/
+    display: flex;
+    justify-content: space-between;
+}
+.works-pc_nav_footer li {
+    color: #0094ff;
+    font-size: 20px;
+    line-height: 1.75; /*35/20*/
+}
+.works-sp_nav_footer {
+    display: none;
+}
+/*works_01.html-フッター*/
+.works_01-footer {
+    margin-bottom: 30px;
+}
 
+/*レスポンシブ~1500px*/
+@media screen and (min-width: 1500px) {
+    .contents1 {
+        padding-top: 100px;
+        width: 100%;
+        max-width: 1500px;
+        margin: 0 auto;
+    }
+    .explanation {
+        margin: 50px 20px 0 50px;
+    }
+    .self_introduction {
+        width: 100%;
+    }
+    .favorite img {
+        max-width: 160%;
+    }
+    .favorite_title {
+        font-size: 25px;
+    }
+    /*.favorite_item01 {
+        width: 12vw;
+    }
+    .favorite_item02 {
+        width: 12vw;
+    }
+    .favorite_item03 {
+        width: 12vw;
+    }
+    .favorite_item04 {
+        width: 12vw;
+    }*/
+    .message p {
+        font-size: 30px;
+        line-height: 2.7;
+    }
+}
+/*レスポンシブ~1200px*/
+@media screen and (max-width: 1200px) {
+    /*お問い合わせ*/
+    /*フリガナとメールアドレス改行させる*/
+    .space_1201 {
+        display: none;
+    }
+    .space_1200 {
+        display: inline;
+        font-size: 16px;
+        padding: 10px;
+        margin-bottom: 50px;
+        border: solid 1px #aaa;
+        border-radius: 5px;
+        width: 745px;
+        color: #999;
+        resize: vertical;
+    }
+    .space_1200:focus {
+        outline: 1px #9a9fff solid;
+        color: #333;
+    }
+    .contact_title_1201 {
+        display: none;
+    }
+    .contact_title_1200 {
+        display: inline-block;
+        line-height: 1.75; /*28/16*/
+    }
+    .contact_title_1200 p {
+        display: flex;
+        font-size: 16px;
+        line-height: 1.75; /*28/16*/
+    }
+}
 /*レスポンシブ1100px~*/
 /*skillの文章改行の調整*/
 @media screen and (max-width: 1135px) {
@@ -866,15 +1260,17 @@ img {
         margin-left: 0;
     }
     .message {
-        height: 70vh; /*768/1366*100*/
+        height: 55vh; /*画像の高さ*/
     }
+
     /*2_Skill_できること*/
     .skill_menu {
         display: block;
     }
     /*デザインスキル*/
     .design_skill {
-        width: 55vw; /*841/1366*100*/
+        /*width: 55vw; /*841/1366*100*/
+        width: 100%;
     }
     .icon_design {
         display: none;
@@ -888,13 +1284,14 @@ img {
     .sp_icon_design ul {
         display: flex;
         justify-content: left;
-        padding: 20px 10px;
+        padding: 20px 0 20px 10px;
     }
     .sp_skill_item {
         padding: 5px 0 5px 10px;
     }
     .sp_skill_item p {
-        width: 36.6vw; /*500/1366*100*/
+        /*width: 36.6vw; /*500/1366*100*/
+        width: 100%;
         line-height: 2;
     }
     .bold {
@@ -905,6 +1302,7 @@ img {
     }
     .sp_skill_explanation {
         font-size: 15px;
+        width: 100%;
     }
     /*コーディングスキル*/
     .cording_skill {
@@ -927,9 +1325,42 @@ img {
         margin: 0 auto;
     }
 }
-/*レスポンシブ750px~*/
+
+/*index.html-レスポンシブ810px~*/
+@media screen and (max-width: 810px) {
+    .message {
+        height: 40vh; /*画像の高さ*/
+    }
+    /*お問い合わせ*/
+    /*入力スペースの横幅変更*/
+    .contact_form {
+        width: 95%; /*700/750*100*/
+        margin: 0 auto;
+    }
+    .select {
+        margin-top: 50px;
+    }
+    .space {
+        width: 100%;
+        box-sizing: border-box; /*paddingとborderを幅と高さに含める*/
+    }
+    .space_1200 {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .textarea {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+/*index.html-レスポンシブ750px~*/
 @media screen and (max-width: 750px) {
     /*フッター*/
+    .header {
+        width: 100%;
+        height: 100vh;
+        background-image: url(../images/PF_sea_750px.jpg);
+    }
     .header_global_nav {
         width: 100vw;
     }
@@ -1006,6 +1437,7 @@ img {
         padding: 10px 0;
         font-size: 18px;
     }
+
     /*1_About_自己紹介*/
     .self_introduction {
         display: block;
@@ -1045,7 +1477,12 @@ img {
     .message {
         width: 100%;
         display: block;
-        background-image: none;
+        background: none;
+    }
+    .message {
+        width: 100%; /*1264/1366*100=93vw*/
+        height: 768px; /*画像の高さ*/
+        background-image: url(../images/about_dots00.png);
     }
     .pc_message {
         display: none;
@@ -1053,42 +1490,367 @@ img {
     .spme {
         display: inline;
         text-align: center;
-        position: relative;
+        /*position: relative;*/
     }
-    .spme img {
-        vertical-align: top;
+    .message p {
+        font-size: 3.3vw; /*25/750*100*/
     }
     .sp_message {
         position: absolute;
-        top: 250px;
+        top: 9vh;
         left: 0;
         width: 100%;
-        display: inline;
-        font-size: 35px;
-        font-family: "Yu Mincho";
-        color: #0094ff;
-        line-height: 2.1; /*38/18*/
-        text-align: center;
-        font-feature-settings: "palt";
-        letter-spacing: 0.05em; /*50/1000*/
-        margin: 0 auto;
     }
+    .sp_message span {
+        margin-bottom: 2em;
+        display: inline-block;
+    }
+
     /*2_Skill_できること*/
     .contents2 {
-        padding-top: 55vh;
+        padding-top: 50px; /*500/750*100*/
+    }
+    .skill_content {
+        width: 90%;
+    }
+    .sp_icon_design {
+        width: 100%;
     }
     .icon_cording ul {
         display: none;
     }
     .sp_icon_conrding {
         display: inline;
+        width: 90%;
     }
     .sp_icon_conrding ul {
         display: flex;
+        width: 100%;
+    }
+    .sp_skill_item {
+        width: 100%;
+    }
+    .sp_skill_item br {
+        display: none;
+    }
+    .sp_skill_item p {
+        width: 100%;
+    }
+    .skill_explanation02 {
+        width: 90vw;
+    }
+    .skill_explanation02 p {
+        width: 90%;
+        padding: 0;
+    }
+
+    /*フッター*/
+    .footer {
+        width: 100%;
+        /*height: 130vh;*/
+        background-image: url(../images/sp_footer750×1330.png);
+        background-size: cover;
     }
 
     /*4_お問い合わせ*/
+    .contents4 {
+        margin-top: 50px;
+        padding-top: 50px;
+    }
+    .contents4_detail {
+        width: 95%; /*700/750*100*/
+        margin: 0 auto;
+    }
     .select {
-        width: 55vw;
+        width: 100%; /*550/750*100*/
+        box-sizing: border-box;
+        margin-top: 0;
+    }
+    .contact_message {
+        font-size: 16px;
+    }
+    .contact_form {
+        margin-top: 40px;
+        width: auto;
+    }
+    .space {
+        width: 100%;
+        box-sizing: border-box; /*paddingとborderを幅と高さに含める*/
+    }
+    .space_1200 {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .textarea {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .pc_nav_footer {
+        display: none;
+    }
+    .sp_nav_footer {
+        display: block;
+        margin-top: 10px;
+    }
+    .sp_nav_footer ul {
+        margin: 0 auto;
+        width: 30vw;
+        display: flex;
+        justify-content: space-between;
+    }
+    .sp_nav_footer li {
+        color: #fff;
+        font-size: 16px;
+        line-height: 1.75;
+    }
+    .button02 {
+        margin-top: 5vw;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .button02 a {
+        font-size: 16px;
+        padding: 10px 40px;
+    }
+    /*フッターナビ*/
+    .logo_fotter {
+        margin-top: 8vh;
+    }
+
+    /*index.html-レスポンシブ550px~*/
+    @media screen and (max-width: 595px) {
+        /*文章私の名前の由来で*/
+        .message {
+            width: 100%; /*1264/1366*100=93vw*/
+            height: 60vh; /*画像の高さ*/
+            background-size: cover;
+        }
+        /*できること*/
+        .contents2 {
+            padding-top: 0;
+        }
+        /*お問い合わせ*/
+        .contact_message {
+            display: none;
+        }
+        .sp_contact_message {
+            display: block;
+            font-size: 16px;
+            line-height: 1.75; /*35/20*/
+            text-align: left;
+            font-feature-settings: "palt";
+            margin-top: 20px;
+        }
+    }
+
+    /*index.html-レスポンシブ412px~*/
+    @media screen and (max-width: 412px) {
+        .logo_mark {
+            width: 7.7vw; /*32/412*100*/
+        }
+        .logo_name {
+            font-size: 6vw; /*25/412*100*/
+        }
+        /*自己紹介*/
+        .contents1 {
+            padding-top: 0;
+        }
+        /*文章私の名前の由来で*/
+        .message {
+            width: 100%; /*1264/1366*100=93vw*/
+            height: 45vh; /*画像の高さ*/
+            background-size: cover;
+        }
+        .sp_message {
+            top: 5vh;
+        }
+        /*できること*/
+        .title_skill02 {
+            margin-top: 0;
+        }
+        .sp_skill_item br {
+            display: block;
+        }
+        /*index.html-3_Works_作品実績*/
+        .contents3 {
+            padding-top: 0;
+        }
+        /*4_Contact_お問い合わせ*/
+        .contents4 {
+            margin-top: 50px;
+            padding-top: 0px;
+        }
+        /*お問い合わせ*/
+        .sp_contact_message {
+            margin: 0 5px;
+        }
+    }
+
+    /*index.html-レスポンシブ375px~*/
+    @media screen and (max-width: 376px) {
+        .header {
+            width: 100%;
+            height: 120vh;
+            background-image: url(../images/PF_sea_375px.jpg);
+        }
+
+        /*見出し設定*/
+        .title {
+            margin: 0 auto;
+            width: 70vw;
+            height: 120px; /*画像の高さ*/
+            background-image: url(../images/line_brush.png);
+            background-repeat: no-repeat; /*画像が繰り返すのを防ぐ*/
+            background-position: center center; /*画像を中央寄せ*/
+            background-size: 100% auto; /*背景画像を要素に合わせて表示*/
+            text-align: center;
+        }
+        .title_name {
+            font-size: 38px;
+            line-height: 2.2;
+            color: #0094ff;
+        }
+        .subtitle {
+            font-size: 17px;
+            line-height: 1.7; /*29/17*/
+            color: #0094ff;
+        }
+        /*自己紹介*/
+        .message {
+            width: 100%;
+            height: 50vh; /*画像の高さ*/
+            background-image: url(../images/about_dots01.png);
+            background-size: cover;
+        }
+        .message p {
+            font-size: 16px;
+        }
+        .sp_message {
+            position: absolute;
+            top: 5vh;
+        }
+        /*2_Skill_できること*/
+        /*index.html-3_Works_作品実績*/
+        .contents3 {
+            padding-top: 0;
+        }
+        .works-contents3 {
+            padding-top: 0;
+        }
+        /*フッター*/
+        .footer {
+            width: 100%;
+            /*height: 400vh; /*1500/375*100*/
+            background-image: url(../images/PF_sea_02_resize_375×1500.jpg);
+        }
+        /*フッターナビ*/
+        .logo_fotter {
+            margin-top: 100px;
+        }
+    }
+
+    /*works.html-レスポンシブ750px~*/
+    @media screen and (max-width: 750px) {
+        /*フッター*/
+        .works-header_global_nav {
+            width: 100vw;
+        }
+        /*works.index-トップへ戻るボタン*/
+        .page-top {
+            right: -15px;
+        }
+        /*works.html-フッター*/
+        /*works.html-フッターナビ*/
+        .works-logo_name_fotter {
+            color: #0094ff;
+            text-align: center;
+            font-size: 25px;
+            line-height: 1.2; /*30/25*/
+        }
+        .works-pc_nav_footer {
+            display: none;
+        }
+
+        .works-sp_nav_footer {
+            display: block;
+            margin-top: 10px;
+        }
+        .works-sp_nav_footer ul {
+            margin: 0 auto;
+            width: 30vw;
+            display: flex;
+            justify-content: space-between;
+        }
+        .works-sp_nav_footer li {
+            color: #0094ff;
+            font-size: 16px;
+            line-height: 1.75;
+        }
+    }
+    /*works.html-レスポンシブ550px~*/
+    @media screen and (max-width: 550px) {
+        /*3_Works_作品実績*/
+        .gallery ul {
+            display: block;
+            text-align: center;
+        }
+        .contents img {
+            width: 70vw;
+        }
+        .contents p {
+            width: 69vw;
+            text-align: left;
+        }
+        .works-button01 a {
+            width: 36.3vw; /*200/550*100*/
+        }
+        .works-button01 a span {
+            margin-right: 0;
+            font-size: 13px;
+        }
+    }
+    /*works.html-レスポンシブ412px~*/
+    @media screen and (max-width: 412px) {
+        .works-button01 br {
+            display: inline;
+        }
+    }
+    /*works_01.html-レスポンシブ750px~*/
+    @media screen and (max-width: 750px) {
+        /*works_01_作品実績*/
+        .works_00 ul {
+            display: block;
+            padding: 100px 0;
+        }
+        .works_00-left {
+            width: 80%;
+            padding: 15px 5px 0 5px;
+            box-sizing: border-box; /*paddingとborderを幅と高さに含める*/
+        }
+        .works_00-icon {
+            padding-right: 10px;
+        }
+        .works_00-right {
+            width: 80%;
+            margin: 0 auto;
+        }
+    }
+    /*index.html-レスポンシブ412px~*/
+    @media screen and (max-width: 412px) {
+        .works_00 ul {
+            display: block;
+            padding: 100px 0 70px 0;
+        }
+        .works_00-title {
+            margin-top: 20px;
+        }
+        .works_00-subtitle {
+            float: none;
+        }
+        .works_00-explanation {
+            margin-left: 5vw; /*158/1366*100*/
+            margin-bottom: 20px;
+        }
     }
 }
