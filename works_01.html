@@ -61,13 +61,24 @@
             </div>
         </div>
     </header>
-
     <!--Works_作品実績-->
     <div class="works_00">
         <ul>
             <li class="works_00-left">
                 <p class="works_00-img"><img src="images/PF_work00_banner_01.png" alt="化粧品バナー"></p>
-                <p class="works_00-icon"><img src="images/icon_plus.png"></p>
+                <input type="checkbox" id="pop_up">
+                <label id="popup" for="pop_up" class="overlay">
+                    <label class="popwindow">
+                        <div class="popuptitle">化粧品バナー</div>
+                        <label class="close" for="pop_up">×</label><img itemprop="image" loading="lazy"
+                            src="images/PF_work01_banner_popup01.jpg" alt="化粧品バナーのみ">
+                    </label>
+                </label>
+                <div class="c">
+                    <label for="pop_up">
+                        <img itemprop="image" loading="lazy" src="images/icon_plus.png" alt="プラスマーク">
+                    </label>
+                </div>
             </li>
             <li class="works_00-right">
                 <h4 class="works_00-title">化粧品バナー</h4>

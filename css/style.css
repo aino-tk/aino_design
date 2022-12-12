@@ -863,8 +863,83 @@ img {
     margin: 0 auto;
     padding: 30px 30px 0 0;
 }
-.works_00-icon {
+.c {
     text-align: right;
+}
+.overlay {
+    /* 水色の背景 */
+    position: fixed;
+    background: #c1efff;
+    transition: all 0.5s 0s ease;
+    visibility: hidden;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+#pop_up {
+    display: none;
+}
+#pop_up:checked + .overlay {
+    visibility: visible;
+    opacity: 1;
+    z-index: 100000;
+    background-color: rgba(3, 19, 31, 0.5);
+    width: 100%;
+}
+.popwindow {
+    border-radius: 5px;
+    overflow: auto; /* スクロールバー用 */
+    max-height: 95%; /* すき間 */
+    min-width: fit-content; /* 横幅が広い時に白の部分が大きくならないため */
+    max-width: 95%; /* すき間 */
+    position: fixed;
+    top: 50%; /* 中央に */
+    left: 50%; /* 中央に */
+    transform: translate(-50%, -50%); /* 中央に */
+    z-index: 100010;
+    font-size: 15px;
+    line-height: 18px;
+    margin: 10px auto;
+    padding: 4px 10px;
+    background: #fffd; /* 枠の色 */
+    text-align: center; /* 文字を中央寄せ */
+    transition: all 500ms ease-in-out;
+}
+.popwindow .popuptitle {
+    font-size: 15px;
+    margin: 8px;
+    color: #333;
+}
+.popwindow .close {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    transition: all 300ms;
+    font-size: 24px;
+    line-height: inherit;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+    padding: 2px;
+}
+.popwindow .close:hover {
+    color: #0094ff;
+}
+.popwindow::-webkit-scrollbar-track {
+    background: none;
+}
+.popwindow::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+.popwindow::-webkit-scrollbar-thumb {
+    background: #c1efff;
+    border-radius: 5px;
+}
+.clickable:hover {
+    cursor: pointer;
 }
 .works_00-right {
     width: 40%;
