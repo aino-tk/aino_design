@@ -543,10 +543,11 @@ img {
     display: none;
 }
 .message p {
-    font-size: 2.5vw; /*35/1366*100*/
+    /*font-size: 2.5vw; /*35/1366*100*/
+    font-size: 2vw; /*28/1366*100*/
     font-family: "Yu Mincho";
     color: #0094ff;
-    line-height: 2.1; /*74/35*/
+    line-height: 2.6; /*74/28*/
     text-align: center;
     font-feature-settings: "palt";
     letter-spacing: 0.15em;
