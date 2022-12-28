@@ -110,6 +110,7 @@
                             rel="noopener noreferrer">chesya_neko</a></dd>
                 </dl>
             </div>
+        </section>
     </div>
     <div class="scroll_up">
         <div class="message" id="message">
@@ -132,8 +133,6 @@
                 </p>
             </div>
         </div>
-        </section>
-    </div>
     </div>
 
     <!--Skill_できること-->
@@ -246,6 +245,7 @@
                     </div>
                 </div>
             </div>
+        </section>
     </div>
 
     <!--Works_作品実績-->
@@ -255,6 +255,7 @@
                 <h2 class="title_name">Works</h2>
                 <p class="subtitle">作品実績</p>
             </div>
+        </section>
     </div>
     <div class="works_menu">
         <div class="works_slider">
@@ -353,8 +354,10 @@
                     <p class="sp_contact_message">ポートフォリオをご覧いただきましてありがとうございます。
                         制作のご依頼やご相談など、お気軽にお問い合わせくださいませ。
                         お問い合わせいただいた内容は確認後、3営業日以内にご連絡させていただきます。</p>
-                    <form class="contact_form"
-                        action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdZPI0l3ZOJTk601Nlt-_gKrJE0h2n6W6_N91uQaptHlHQfaw/formResponse">
+                    <form
+                        action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdZPI0l3ZOJTk601Nlt-_gKrJE0h2n6W6_N91uQaptHlHQfaw/formResponse"
+                        method="POST">
+                        <!--
                         <div>
                             <select class="select" name="choose">
                                 <option value="design">デザインについてのご相談・ご質問</option>
@@ -372,18 +375,20 @@
                         <div>
                             <label class="contact_title_1201" for="name_assistance">フリガナ</label>
                             <input class="space_1201" id="name_assistance" type="text" name="yourname"
-                                placeholder="タナカ　ハナコ">
-                            <!--1200pxより小さくなると、１行になってしまうため改行させる-->
+                                placeholder="タナカ　ハナコ">-->
+                        <!--1200pxより小さくなると、１行になってしまうため改行させる-->
+                        <!--
                             <label class="contact_title_1200" for="name_assistance">フリガナ</label><br>
-                            <input class="space_1200" id="name_assistance" type="text" name="yourname"
+                            <input class="space_1200" id="name_assistance_1200" type="text" name="yourname"
                                 placeholder="タナカ　ハナコ">
                         </div>
                         <div>
                             <label class="contact_title_1201" for="mail">メールアドレス</label>
                             <input class="space_1201" id="mail" type="email" name="mail" placeholder="info@example.com">
-                            <!--1200pxより小さくなると、１行になってしまうため改行させる-->
+                        --><!--1200pxより小さくなると、１行になってしまうため改行させる--><!--
                             <label class="contact_title_1200" for="mail">メールアドレス</label><br>
-                            <input class="space_1200" id="mail" type="email" name="mail" placeholder="info@example.com">
+                            <input class="space_1200" id="mail_1200" type="email" name="mail"
+                                placeholder="info@example.com">
                         </div>
                         <div>
                             <label class="contact_title" for="tel">
@@ -397,6 +402,56 @@
                             </label>
                             <textarea class="textarea" id="comment" name="comment" placeholder="こちらにお問い合わせ内容を記入してください。"
                                 required></textarea>
+                        </div>
+                        <div>
+                            <input type="submit" class="button02" value="内容を送信する" />
+                        </div>-->
+                        <div>
+                            <select class="select" name="entry.858841606">
+                                <option value="design">デザインについてのご相談・ご質問</option>
+                                <option value="coding">コーディングについてのご相談・ご質問</option>
+                                <option value="website">Webサイト制作についてのご相談・ご質問</option>
+                                <option value="others">その他</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="contact_title" for="name">
+                                <p>お名前 (貴社名)<span class="required">必須</span></p>
+                                <input class="space" id="name" type="text" name="entry.776768604" placeholder="田中　花子"
+                                    required>
+                            </label>
+                        </div>
+                        <div>
+                            <label class="contact_title_1201" for="name_assistance">フリガナ</label>
+                            <input class="space_1201" id="name_assistance" type="text" name="entry.68266900"
+                                placeholder="タナカ　ハナコ">
+                            <!--1200pxより小さくなると、１行になってしまうため改行させる-->
+                            <label class="contact_title_1200" for="name_assistance">フリガナ</label><br>
+                            <input class="space_1200" id="name_assistance_1200" type="text" name="entry.68266900"
+                                placeholder="タナカ　ハナコ">
+                        </div>
+                        <div>
+                            <label class="contact_title_1201" for="mail">メールアドレス</label>
+                            <input class="space_1201" id="mail" type="email" name="entry.682228119"
+                                placeholder="info@example.com">
+                            <!--1200pxより小さくなると、１行になってしまうため改行させる-->
+                            <label class="contact_title_1200" for="mail">メールアドレス</label><br>
+                            <input class="space_1200" id="mail_1200" type="email" name="entry.682228119"
+                                placeholder="info@example.com">
+                        </div>
+                        <div>
+                            <label class="contact_title" for="tel">
+                                <p>電話番号<span class="required">必須</span></p>
+                            </label>
+                            <input class="space" id="tel" type="text" name="entry.157635755" placeholder="090-1234-5678"
+                                required>
+                        </div>
+                        <div>
+                            <label class="contact_title" for="comment">
+                                <p>お問い合わせの内容<span class="required">必須</span></p>
+                            </label>
+                            <textarea class="textarea" id="comment" name="entry.1098301913"
+                                placeholder="こちらにお問い合わせ内容を記入してください。" required></textarea>
                         </div>
                         <div>
                             <input type="submit" class="button02" value="内容を送信する" />
@@ -444,8 +499,8 @@
                         </a></li>
                 </ul>
             </nav>
+        </footer>
     </div>
-    </footer>
 
     <script>
         $(function () {

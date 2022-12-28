@@ -332,7 +332,7 @@ img {
     z-index: 999;
     display: flex;
     justify-content: space-between;
-    padding: 20px 40px;
+    padding: 20px 20px;
     box-sizing: border-box;
 }
 .instagram_logo {
@@ -989,7 +989,7 @@ img {
     background-position: center center; /*画像を常に天地左右中央配置*/
     /*background-size: contain;*/
     background-size: cover; /*表示する大きさに基づいて背景画像を調整*/
-    padding-bottom: 40px;
+    /*padding-bottom: 40px;*/
 }
 .contents4_footer_nav {
     top: 0;
@@ -1162,6 +1162,7 @@ img {
 }
 .pc_nav_footer {
     margin-top: 40px;
+    padding-bottom: 40px;
 }
 .pc_nav_footer ul {
     margin: 0 auto;
@@ -1197,6 +1198,7 @@ img {
 }
 .works-pc_nav_footer {
     margin-top: 30px;
+    padding-bottom: 40px;
 }
 .works-pc_nav_footer ul {
     margin: 0 auto;
@@ -1432,7 +1434,7 @@ img {
 }
 /*index.html-レスポンシブ750px~*/
 @media screen and (max-width: 750px) {
-    /*フッター*/
+    /*ヘッダー*/
     .header {
         width: 100%;
         height: 100vh;
@@ -1669,6 +1671,7 @@ img {
     .sp_nav_footer {
         display: block;
         margin-top: 10px;
+        padding-bottom: 40px;
     }
     .sp_nav_footer ul {
         margin: 0 auto;
@@ -1694,251 +1697,251 @@ img {
     .logo_fotter {
         margin-top: 8vh;
     }
-
-    /*index.html-レスポンシブ550px~*/
-    @media screen and (max-width: 595px) {
-        /*文章私の名前の由来で*/
-        .message {
-            width: 100%; /*1264/1366*100=93vw*/
-            height: 60vh; /*画像の高さ*/
-            background-size: cover;
-        }
-        /*できること*/
-        .contents2 {
-            padding-top: 0;
-        }
-        /*お問い合わせ*/
-        .contact_message {
-            display: none;
-        }
-        .sp_contact_message {
-            display: block;
-            font-size: 16px;
-            line-height: 1.75; /*35/20*/
-            text-align: left;
-            font-feature-settings: "palt";
-            margin-top: 20px;
-        }
+}
+/*index.html-レスポンシブ550px~*/
+@media screen and (max-width: 595px) {
+    /*文章私の名前の由来で*/
+    .message {
+        width: 100%; /*1264/1366*100=93vw*/
+        height: 60vh; /*画像の高さ*/
+        background-size: cover;
     }
-
-    /*index.html-レスポンシブ412px~*/
-    @media screen and (max-width: 412px) {
-        .logo_mark {
-            width: 7.7vw; /*32/412*100*/
-        }
-        .logo_name {
-            font-size: 6vw; /*25/412*100*/
-        }
-        /*自己紹介*/
-        .contents1 {
-            padding-top: 0;
-        }
-        /*文章私の名前の由来で*/
-        .message {
-            width: 100%; /*1264/1366*100=93vw*/
-            height: 45vh; /*画像の高さ*/
-            background-size: cover;
-        }
-        .sp_message {
-            top: 5vh;
-        }
-        /*できること*/
-        .title_skill02 {
-            margin-top: 0;
-        }
-        .sp_skill_item br {
-            display: block;
-        }
-        /*index.html-3_Works_作品実績*/
-        .contents3 {
-            padding-top: 0;
-        }
-        /*4_Contact_お問い合わせ*/
-        .contents4 {
-            margin-top: 50px;
-            padding-top: 0px;
-        }
-        /*お問い合わせ*/
-        .sp_contact_message {
-            margin: 0 5px;
-        }
+    /*できること*/
+    .contents2 {
+        padding-top: 0;
     }
+    /*お問い合わせ*/
+    .contact_message {
+        display: none;
+    }
+    .sp_contact_message {
+        display: block;
+        font-size: 16px;
+        line-height: 1.75; /*35/20*/
+        text-align: left;
+        font-feature-settings: "palt";
+        margin-top: 20px;
+    }
+}
 
-    /*index.html-レスポンシブ375px~*/
-    @media screen and (max-width: 376px) {
-        .header {
-            width: 100%;
-            height: 120vh;
-            background-image: url(../images/PF_sea_375px.jpg);
-        }
+/*index.html-レスポンシブ412px~*/
+@media screen and (max-width: 412px) {
+    .logo_mark {
+        width: 7.7vw; /*32/412*100*/
+    }
+    .logo_name {
+        font-size: 6vw; /*25/412*100*/
+    }
+    /*自己紹介*/
+    .contents1 {
+        padding-top: 0;
+    }
+    /*文章私の名前の由来で*/
+    .message {
+        width: 100%; /*1264/1366*100=93vw*/
+        height: 45vh; /*画像の高さ*/
+        background-size: cover;
+    }
+    .sp_message {
+        top: 5vh;
+    }
+    /*できること*/
+    .title_skill02 {
+        margin-top: 0;
+    }
+    .sp_skill_item br {
+        display: block;
+    }
+    /*index.html-3_Works_作品実績*/
+    .contents3 {
+        padding-top: 0;
+    }
+    /*4_Contact_お問い合わせ*/
+    .contents4 {
+        margin-top: 50px;
+        padding-top: 0px;
+    }
+    /*お問い合わせ*/
+    .sp_contact_message {
+        margin: 0 5px;
+    }
+}
 
-        /*見出し設定*/
-        .title {
-            margin: 0 auto;
-            width: 70vw;
-            height: 120px; /*画像の高さ*/
-            background-image: url(../images/line_brush.png);
-            background-repeat: no-repeat; /*画像が繰り返すのを防ぐ*/
-            background-position: center center; /*画像を中央寄せ*/
-            background-size: 100% auto; /*背景画像を要素に合わせて表示*/
-            text-align: center;
-        }
-        .title_name {
-            font-size: 38px;
-            line-height: 2.2;
-            color: #0094ff;
-        }
-        .subtitle {
-            font-size: 17px;
-            line-height: 1.7; /*29/17*/
-            color: #0094ff;
-        }
-        /*自己紹介*/
-        .message {
-            width: 100%;
-            height: 80vh; /*画像の高さ*/
-            background-image: url(../images/about_dots01.png);
-            background-size: cover;
-        }
-        .message p {
-            font-size: 16px;
-        }
-        .sp_message {
-            position: absolute;
-            top: 5vh;
-        }
-        /*2_Skill_できること*/
-        /*index.html-3_Works_作品実績*/
-        .contents3 {
-            padding-top: 0;
-        }
-        .works-contents3 {
-            padding-top: 0;
-        }
-        /*フッター*/
-        .footer {
-            width: 100%;
-            /*height: 400vh; /*1500/375*100*/
-            background-image: url(../images/PF_sea_02_resize_375×1500.jpg);
-        }
-        /*フッターナビ*/
-        .logo_fotter {
-            margin-top: 100px;
-        }
+/*index.html-レスポンシブ375px~*/
+@media screen and (max-width: 376px) {
+    .header {
+        width: 100%;
+        height: 120vh;
+        background-image: url(../images/PF_sea_375px.jpg);
     }
 
-    /*works.html-レスポンシブ750px~*/
-    @media screen and (max-width: 750px) {
-        /*フッター*/
-        .works-header_global_nav {
-            width: 100vw;
-        }
-        /*3_Works_作品実績*/
-        .works-contents3 {
-            padding-top: 50px;
-        }
-        /*works.index-トップへ戻るボタン*/
-        .page-top {
-            right: -15px;
-        }
-        /*works.html-フッター*/
-        /*works.html-フッターナビ*/
-        .works-logo_name_fotter {
-            color: #0094ff;
-            text-align: center;
-            font-size: 25px;
-            line-height: 1.2; /*30/25*/
-        }
-        .works-pc_nav_footer {
-            display: none;
-        }
+    /*見出し設定*/
+    .title {
+        margin: 0 auto;
+        width: 70vw;
+        height: 120px; /*画像の高さ*/
+        background-image: url(../images/line_brush.png);
+        background-repeat: no-repeat; /*画像が繰り返すのを防ぐ*/
+        background-position: center center; /*画像を中央寄せ*/
+        background-size: 100% auto; /*背景画像を要素に合わせて表示*/
+        text-align: center;
+    }
+    .title_name {
+        font-size: 38px;
+        line-height: 2.2;
+        color: #0094ff;
+    }
+    .subtitle {
+        font-size: 17px;
+        line-height: 1.7; /*29/17*/
+        color: #0094ff;
+    }
+    /*自己紹介*/
+    .message {
+        width: 100%;
+        height: 80vh; /*画像の高さ*/
+        background-image: url(../images/about_dots01.png);
+        background-size: cover;
+    }
+    .message p {
+        font-size: 16px;
+    }
+    .sp_message {
+        position: absolute;
+        top: 5vh;
+    }
+    /*2_Skill_できること*/
+    /*index.html-3_Works_作品実績*/
+    .contents3 {
+        padding-top: 0;
+    }
+    .works-contents3 {
+        padding-top: 0;
+    }
+    /*フッター*/
+    .footer {
+        width: 100%;
+        /*height: 400vh; /*1500/375*100*/
+        background-image: url(../images/PF_sea_02_resize_375×1500.jpg);
+    }
+    /*フッターナビ*/
+    .logo_fotter {
+        margin-top: 100px;
+    }
+}
 
-        .works-sp_nav_footer {
-            display: block;
-            margin-top: 10px;
-        }
-        .works-sp_nav_footer ul {
-            margin: 0 auto;
-            width: 30vw;
-            display: flex;
-            justify-content: space-between;
-        }
-        .works-sp_nav_footer li {
-            color: #0094ff;
-            font-size: 16px;
-            line-height: 1.75;
-        }
+/*works.html-レスポンシブ750px~*/
+@media screen and (max-width: 750px) {
+    /*フッター*/
+    .works-header_global_nav {
+        width: 100vw;
     }
-    /*works.html-レスポンシブ550px~*/
-    @media screen and (max-width: 550px) {
-        /*3_Works_作品実績*/
-        .gallery ul {
-            display: block;
-            text-align: center;
-        }
-        .contents img {
-            width: 70vw;
-        }
-        .contents p {
-            width: 69vw;
-            text-align: left;
-        }
-        .works-button01 a {
-            width: 36.3vw; /*200/550*100*/
-        }
-        .works-button01 a span {
-            margin-right: 0;
-            font-size: 13px;
-        }
+    /*3_Works_作品実績*/
+    .works-contents3 {
+        padding-top: 50px;
     }
-    /*works.html-レスポンシブ412px~*/
-    @media screen and (max-width: 412px) {
-        .works-button01 br {
-            display: inline;
-        }
+    /*works.index-トップへ戻るボタン*/
+    .page-top {
+        right: -15px;
     }
-    /*works_01.html-レスポンシブ750px~*/
-    @media screen and (max-width: 750px) {
-        /*works_01_作品実績*/
-        .works_00 ul {
-            display: block;
-            padding: 100px 0;
-        }
-        .works_00-left {
-            width: 80%;
-            padding: 15px 5px 0 5px;
-            box-sizing: border-box; /*paddingとborderを幅と高さに含める*/
-        }
-        .works_00-icon {
-            padding-right: 10px;
-        }
-        .works_00-right {
-            width: 80%;
-            margin: 0 auto;
-        }
+    /*works.html-フッター*/
+    /*works.html-フッターナビ*/
+    .works-logo_name_fotter {
+        color: #0094ff;
+        text-align: center;
+        font-size: 25px;
+        line-height: 1.2; /*30/25*/
     }
-    /*works_01.html-レスポンシブ412px~*/
-    @media screen and (max-width: 412px) {
-        .works_00 ul {
-            display: block;
-            padding: 100px 0 70px 0;
-        }
-        .works_00-title {
-            margin-top: 20px;
-            font-size: 25px;
-        }
-        .works_00-subtitle {
-            float: none;
-            font-size: 20px;
-        }
-        .works_00-explanation {
-            margin-left: 5vw; /*158/1366*100*/
-            margin-bottom: 20px;
-            font-size: 17px;
-        }
-        .plus_mark {
-            width: 20px;
-            height: 20px;
-        }
+    .works-pc_nav_footer {
+        display: none;
+    }
+
+    .works-sp_nav_footer {
+        display: block;
+        margin-top: 10px;
+        padding-bottom: 40px;
+    }
+    .works-sp_nav_footer ul {
+        margin: 0 auto;
+        width: 30vw;
+        display: flex;
+        justify-content: space-between;
+    }
+    .works-sp_nav_footer li {
+        color: #0094ff;
+        font-size: 16px;
+        line-height: 1.75;
+    }
+}
+/*works.html-レスポンシブ550px~*/
+@media screen and (max-width: 550px) {
+    /*3_Works_作品実績*/
+    .gallery ul {
+        display: block;
+        text-align: center;
+    }
+    .contents img {
+        width: 70vw;
+    }
+    .contents p {
+        width: 69vw;
+        text-align: left;
+    }
+    .works-button01 a {
+        width: 36.3vw; /*200/550*100*/
+    }
+    .works-button01 a span {
+        margin-right: 0;
+        font-size: 13px;
+    }
+}
+/*works.html-レスポンシブ412px~*/
+@media screen and (max-width: 412px) {
+    .works-button01 br {
+        display: inline;
+    }
+}
+/*works_01.html-レスポンシブ750px~*/
+@media screen and (max-width: 750px) {
+    /*works_01_作品実績*/
+    .works_00 ul {
+        display: block;
+        padding: 100px 0;
+    }
+    .works_00-left {
+        width: 80%;
+        padding: 15px 5px 0 5px;
+        box-sizing: border-box; /*paddingとborderを幅と高さに含める*/
+    }
+    .works_00-icon {
+        padding-right: 10px;
+    }
+    .works_00-right {
+        width: 80%;
+        margin: 0 auto;
+    }
+}
+/*works_01.html-レスポンシブ412px~*/
+@media screen and (max-width: 412px) {
+    .works_00 ul {
+        display: block;
+        padding: 100px 0 70px 0;
+    }
+    .works_00-title {
+        margin-top: 20px;
+        font-size: 25px;
+    }
+    .works_00-subtitle {
+        float: none;
+        font-size: 20px;
+    }
+    .works_00-explanation {
+        margin-left: 5vw; /*158/1366*100*/
+        margin-bottom: 20px;
+        font-size: 17px;
+    }
+    .plus_mark {
+        width: 20px;
+        height: 20px;
     }
 }

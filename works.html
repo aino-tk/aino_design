@@ -192,7 +192,7 @@
                 <li><a href="index.html#contact">Contact</a></li>
                 <li class="instagram_logo"><a href="https://www.instagram.com/chesya_neko/" target="_blank"
                         rel="noopener noreferrer">
-                        <img src="images/logo_instagram.png" alt="インスタグラムロゴ">
+                        <img src="images/logo_instagram_0094ff.png" alt="インスタグラムロゴ">
                     </a></li>
             </ul>
         </nav>
@@ -210,14 +210,12 @@
                 <li><a href="index.html#contact">Contact</a></li>
                 <li class="instagram_logo"><a href="https://www.instagram.com/chesya_neko/" target="_blank"
                         rel="noopener noreferrer">
-                        <img src="images/logo_instagram.png" alt="インスタグラムロゴ">
+                        <img src="images/logo_instagram_0094ff.png" alt="インスタグラムロゴ">
                     </a></li>
             </ul>
         </nav>
-        </div>
     </footer>
 
-    </section>
     <script>
         $(function () {
             //ヘッダー固定と背景色変更
@@ -233,8 +231,39 @@
                 $(".sp_nav").fadeToggle();
                 $(".sp_btn").toggleClass("open");
             });
+            function hash(text) {
+                const sha = new jsSHA('SHA-256', 'TEXT');
+                sha.update(text);
+                return sha.getHash('HEX');
+            }
+            function auth(password) {
+                const url = hash(password);
+                const xhr = new XMLHttpRequest();
+                xhr.open('GET', url);
+                xhr.send();
+                xhr.onload = function () {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        window.location = url;
+                    } else {
+                        const message = document.getElementById('message');
+                        const input = document.getElementById('password');
+                        message.innerHTML = 'Wrong password! Try again.';
+                        input.value = '';
+                    }
+                };
+                xhr.onerror = function () {
+                    const message = document.getElementById('message');
+                    message.innerHTML = 'Sorry, ERROR !';
+                };
+            }
+            const form = document.getElementById('form');
+            form.addEventListener('submit', function (event) {
+                const password = document.getElementById('password').value;
+                auth(password);
+                event.preventDefault();
+            });
         }
-        ); 
+        );
     </script>
 </body>
 
