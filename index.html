@@ -356,7 +356,7 @@
                         お問い合わせいただいた内容は確認後、3営業日以内にご連絡させていただきます。</p>
                     <form
                         action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdZPI0l3ZOJTk601Nlt-_gKrJE0h2n6W6_N91uQaptHlHQfaw/formResponse"
-                        method="POST">
+                        method="POST" target="hidden_iframe" onsubmit="submitted=true;">
                         <!--
                         <div>
                             <select class="select" name="choose">
@@ -560,6 +560,8 @@
         }
         ); 
     </script>
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display: none"
+        onload="if(submitted){window.location='https://www.tokyodisneyresort.jp/';}"></iframe>
 </body>
 
 </html>
