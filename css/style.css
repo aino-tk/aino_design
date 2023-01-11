@@ -850,12 +850,12 @@ img {
     right: 10px;
 }
 
-/*works_01_作品実績*/
+/*works_01~_作品実績*/
 .works_00 {
     width: 90%;
     margin: 0 auto;
 }
-.works_00 ul {
+.works_00_ul {
     display: flex;
     padding: 150px 0 100px 0;
     box-sizing: border-box; /*paddingとborderを幅と高さに含める*/
@@ -979,12 +979,30 @@ img {
     padding-top: 20px;
     line-height: 2.9; /*50/17*/
 }
+.contact {
+    font-weight: 800;
+}
+/*works_07*/
+.cafe_site {
+    text-align: right; /*右に寄せる*/
+}
+/*.PF_site {
+    float: right;
+}*/ /*ポップアップ表示もするため虫眼鏡アイコンと横並びにする*/
+.popup_link {
+    display: flex;
+    justify-content: right;
+}
+.popup_link li {
+    margin-left: 10px;
+}
 
 /*フッター*/
 .footer {
     width: 100%;
     /*height: 240vh;*/
-    background-image: url(../images/footer_sea_code.png);
+    /*background-image: url(../images/footer_sea_code.png);*/
+    background-image: url(../images/PF_sea_02_3005×2000.jpg);
     background-repeat: no-repeat; /*画像を繰り返し表示しない*/
     background-position: center center; /*画像を常に天地左右中央配置*/
     /*background-size: contain;*/
@@ -1219,8 +1237,112 @@ img {
     margin-bottom: 30px;
 }
 
+/*サンクスページ*/
+.thanks_page {
+    width: 100%;
+    box-sizing: border-box; /*paddingとborderを幅と高さに含める*/
+    padding: 0 70px;
+    background-image: url(../images/about_nikukyu00.png);
+    background-repeat: no-repeat; /*画像を繰り返し表示しない*/
+    background-position: right;
+    /*background-size: cover;*/
+    background-size: contain; /*表示する大きさに基づいて背景画像を調整*/
+    margin: 0 auto;
+    text-align: center;
+}
+.thanks_page p {
+    display: inline-block;
+    text-align: left;
+}
+.thanks_title {
+    color: #0094ff;
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 1.75;
+    padding-top: 150px;
+}
+.tahnaks_text {
+    font-size: 20px;
+    line-height: 1.75;
+    margin-top: 20px;
+}
+.supplement {
+    font-size: 17px;
+    line-height: 1.75;
+    margin-top: 10px;
+}
+.supplement span {
+    color: #6b9bd6;
+    font-weight: bold;
+    text-decoration: underline;
+}
+.thanks-button01 {
+    margin-top: 100px;
+}
+.thanks-button01 a {
+    display: inline-block;
+    background: rgb(208, 188, 212, 60%);
+    border-radius: 50px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    width: 185px;
+    padding: 25px 60px;
+    transition: 0.3s ease-in-out;
+    background-image: url(../images/icon_home01.png);
+    background-repeat: no-repeat;
+    background-size: 30px 25px;
+    background-position: left 25px top 50%;
+}
+.thanks-button01 a:hover {
+    background: #cfbbd3;
+    color: #fff;
+    background-image: url(../images/icon_home02.png);
+    background-repeat: no-repeat;
+    background-size: 25px 20px;
+    background-position: left 30px top 50%;
+}
+.thanks-button01 a:after {
+    content: "";
+    width: 5px;
+    height: 5px;
+    border-top: 2px solid #333;
+    border-right: 2px solid #333;
+    transform: rotate(45deg) translateY(-50%);
+    position: absolute;
+    top: 50%;
+    right: 40px;
+    border-radius: 1px;
+    transition: 0.3s ease-in-out;
+}
+.thanks-button01 a:hover:after {
+    border-color: #fff;
+}
+
 /*レスポンシブ~1500px*/
 @media screen and (min-width: 1500px) {
+    /*ヘッダー*/
+    /*鳥のアニメ－ジョン*/
+    /*鳥が右端で途切れる際、画面が右に都度ずれている。100%のleftを101vw→98vwに変更し、
+    　鳥が途切れる位置を短くして画面が動かないように調整*/
+    @keyframes moving {
+        0% {
+            top: 13vh;
+            left: -2vw;
+        }
+        25% {
+            top: 17vh;
+            left: 23vw;
+        }
+        100% {
+            top: 13vh;
+            left: 98vw;
+        }
+    }
+
+    /*About*/
     .contents1 {
         padding-top: 100px;
         width: 100%;
@@ -1311,6 +1433,9 @@ img {
     }
 
     /*1_About_自己紹介*/
+    .contents1 {
+        padding-top: 0;
+    }
     .title_name {
         font-size: 50px; /*61/1366*100*/
         line-height: 2;
@@ -1405,6 +1530,35 @@ img {
     }
 }
 
+/*index.html-レスポンシブ912px~*/
+@media screen and (max-width: 912px) {
+    /*ヘッダー*/
+    .header {
+        height: 70vh;
+        background-image: url(../images/PF_sea_912px.jpg);
+    }
+    /*鳥のアニメーション*/
+    /*鳥が右端で途切れる際、画面が右に都度ずれている。100%のleftを101vw→98vwに変更し、
+    　鳥が途切れる位置を短くして画面が動かないように調整*/
+    @keyframes moving {
+        0% {
+            top: 13vh;
+            left: -2vw;
+        }
+        25% {
+            top: 17vh;
+            left: 23vw;
+        }
+        100% {
+            top: 13vh;
+            left: 98vw;
+        }
+    }
+    .catch_copy {
+        padding-top: 250px;
+    }
+}
+
 /*index.html-レスポンシブ810px~*/
 @media screen and (max-width: 810px) {
     .message {
@@ -1464,8 +1618,7 @@ img {
         top: 15px;
         transition: 0.3s; /*アニメーションになる*/
     }
-    .sp_btn span::before,
-    .sp_btn span::after {
+    .sp_btn span::before {
         content: "";
         width: 33px;
         height: 3px;
@@ -1479,25 +1632,26 @@ img {
     }
     .sp_btn span::after {
         top: 10px;
+        content: "Menu";
+        font-size: 0.7em;
+        text-transform: uppercase;
+        color: #fff;
+        line-height: 2.5;
     }
     .open span {
-        background: transparent; /*背景色透明*/
+        top: 5;
+        transform: rotate(140deg);
     }
     .open span::before {
         bottom: 0;
-        transform: rotate(45deg);
+        transform: rotate(80deg);
     }
     .open span::after {
-        top: 0;
-        transform: rotate(135deg);
+        line-height: 4;
+        content: "";
     }
     .sp_nav {
-        /*background: rgb(208, 188, 212, 60%);
-        /*background: rgb(154, 159, 255, 60%);*/
-        /*background: rgb(255, 124, 24, 70%);*/
-        /*background: rgb(147, 16, 105, 60%);*/
         background: rgb(0, 0, 63, 80%);
-        /*background: rgba(0, 0, 0, 60%);*/
         height: 100vh;
         width: 100%;
         position: absolute;
@@ -1515,6 +1669,9 @@ img {
         text-align: center;
         padding: 10px 0;
         font-size: 18px;
+    }
+    .instagram_logo {
+        margin: 0 auto;
     }
 
     /*1_About_自己紹介*/
@@ -1699,12 +1856,21 @@ img {
     }
 }
 /*index.html-レスポンシブ550px~*/
-@media screen and (max-width: 595px) {
+@media screen and (max-width: 550px) {
+    /*ヘッダー*/
+    .header {
+        height: 120vh;
+        background-image: url(../images/PF_sea_550px.jpg);
+    }
     /*文章私の名前の由来で*/
     .message {
         width: 100%; /*1264/1366*100=93vw*/
-        height: 60vh; /*画像の高さ*/
+        height: 80vh; /*画像の高さ*/
+        /*background-size: contain;*/
         background-size: cover;
+    }
+    .message p {
+        font-size: 17px;
     }
     /*できること*/
     .contents2 {
@@ -1732,20 +1898,19 @@ img {
     .logo_name {
         font-size: 6vw; /*25/412*100*/
     }
-    /*自己紹介*/
-    .contents1 {
-        padding-top: 0;
-    }
     /*文章私の名前の由来で*/
     .message {
         width: 100%; /*1264/1366*100=93vw*/
-        height: 45vh; /*画像の高さ*/
+        height: 50vh; /*画像の高さ*/
         background-size: cover;
     }
     .sp_message {
         top: 5vh;
     }
     /*できること*/
+    .contents2 {
+        padding-top: 0;
+    }
     .title_skill02 {
         margin-top: 0;
     }
@@ -1904,7 +2069,7 @@ img {
 /*works_01.html-レスポンシブ750px~*/
 @media screen and (max-width: 750px) {
     /*works_01_作品実績*/
-    .works_00 ul {
+    .works_00_ul {
         display: block;
         padding: 100px 0;
     }
@@ -1943,5 +2108,45 @@ img {
     .plus_mark {
         width: 20px;
         height: 20px;
+    }
+}
+
+/*thanks.html-レスポンシブ750px~*/
+@media screen and (max-width: 750px) {
+    /*サンクスページ*/
+    .thanks_page {
+        padding: 0 20px;
+    }
+    .thanks_title {
+        font-size: 25px;
+    }
+    .tahnaks_text {
+        font-size: 18px;
+    }
+    .supplement {
+        font-size: 2.2vw; /*17/750*100*/
+    }
+}
+/*thanks.html-レスポンシブ500px~*/
+@media screen and (max-width: 500px) {
+    .thanks_page {
+        padding: 0 5px;
+    }
+    .thanks_title {
+        font-size: 5vw; /*25/500*100*/
+        padding-top: 120px;
+    }
+    .tahnaks_text {
+        font-size: 3.6vw; /*18/500*100*/
+    }
+    .supplement {
+        font-size: 2.2vw;
+    }
+    .thanks-button01 {
+        margin-top: 60px;
+    }
+    .thanks-button01 a {
+        width: 38vw; /*185/500*100*/
+        font-size: 15px;
     }
 }
