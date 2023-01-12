@@ -32,7 +32,6 @@ input {
     /*デフォルトの文字色、font-familyを予め当てておく*/
     color: #333;
     font-family: "Noto Sans JP", sans-serif;
-    /*font-family: "Noto Sans JP", "sans-serif";*/
 }
 a {
     /*下線を消す*/
@@ -693,6 +692,8 @@ img {
 }
 .works_title {
     color: #0094ff;
+    font-size: 17px;
+    font-weight: bold;
     line-height: 1.76; /*30/17*/
     margin-bottom: 25px;
 }
@@ -1689,10 +1690,9 @@ img {
         padding: 10px 0;
         font-size: 18px;
     }
-    .instagram_logo {
+    .sp_instagram_logo {
         margin: 0 auto;
     }
-
     /*1_About_自己紹介*/
     .self_introduction {
         display: block;
@@ -1805,6 +1805,9 @@ img {
         /*height: 130vh;*/
         background-image: url(../images/sp_footer750×1330.png);
         background-size: cover;
+    }
+    .instagram_logo {
+        padding-right: 10px;
     }
 
     /*4_お問い合わせ*/
@@ -2112,10 +2115,10 @@ img {
         width: 20px;
         height: 20px;
     }
-    .instagram_logo {
+    /*.instagram_logo {
         margin: 0 auto;
-    }
-    .instagram_logo img {
+    }*/
+    .sp_instagram_logo img {
         width: 20px;
         height: 20px;
     }
