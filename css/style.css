@@ -1866,7 +1866,7 @@ img {
         font-size: 16px;
         line-height: 1.75;
     }
-    .button02 {
+    /*.button02 {
         margin-top: 10px;
     }
     .button02 {
@@ -1883,7 +1883,7 @@ img {
         color: #555;
         font-size: 19px;
         line-height: 1.75; /*42/24*/
-        display: block;
+    /*display: block;
     }
     .button02:hover {
         background: #6b9bd6;
@@ -1905,8 +1905,8 @@ img {
     }
     .button02:hover:after {
         border-color: #fff;
-    }
-    /*.button02 {
+    }*/
+    .button02 {
         margin-top: 5vw;
         width: 100%;
         box-sizing: border-box;
@@ -1914,7 +1914,7 @@ img {
     .button02 a {
         font-size: 16px;
         padding: 10px 40px;
-    }*/
+    }
     /*フッターナビ*/
     .logo_fotter {
         margin-top: 8vh;
