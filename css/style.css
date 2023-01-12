@@ -712,6 +712,7 @@ img {
 }
 .button01 a {
     background: rgb(208, 188, 212, 60%);
+    box-shadow: 0 5px 0 #cfbbd3; /* 影の太さ・色 */
     border-radius: 50px;
     position: relative;
     display: flex;
@@ -724,6 +725,7 @@ img {
 }
 .button01 a:hover {
     background: #cfbbd3;
+    box-shadow: none;
     color: #fff;
 }
 .button01 a:after {
@@ -782,6 +784,7 @@ img {
 .works-button01 a {
     display: inline-block;
     background: rgb(208, 188, 212, 60%);
+    box-shadow: 0 5px 0 #cfbbd3; /* 影の太さ・色 */
     border-radius: 50px;
     position: relative;
     display: flex;
@@ -798,6 +801,7 @@ img {
 }
 .works-button01 a:hover {
     background: #cfbbd3;
+    box-shadow: none;
     color: #fff;
     background-image: url(../images/icon_mail02.png);
     background-repeat: no-repeat;
@@ -1147,25 +1151,24 @@ img {
     margin-top: 10px;
 }
 .button02 {
-    background: #931069;
+    background: #9ac7ff;
+    box-shadow: 0 5px 0 #6b9bd6;
     border-radius: 50px;
     border: none;
     position: relative;
-    /*display: flex;*/
-    /*justify-content: space-between;
-    align-items: center;*/
     margin: 0 auto;
     max-width: 250px;
     margin-top: 60px;
     padding: 15px 45px;
     transition: 0.3s ease-in-out;
-    color: #fff;
-    font-size: 20px;
+    color: #555;
+    font-size: 19px;
     line-height: 1.75; /*42/24*/
     display: block;
 }
 .button02:hover {
-    background: #cfbbd3;
+    background: #6b9bd6;
+    box-shadow: none;
     color: #fff;
 }
 .button02:after {
