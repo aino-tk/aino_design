@@ -980,7 +980,15 @@ img {
     line-height: 2.9; /*50/17*/
 }
 .contact {
-    font-weight: 800;
+    text-decoration-line: underline;
+}
+.plus_mark {
+    width: 25px;
+    height: 25px;
+}
+.link_mark {
+    width: 25px;
+    height: 25px;
 }
 /*works_07*/
 .cafe_site {
@@ -2085,13 +2093,28 @@ img {
         width: 80%;
         margin: 0 auto;
     }
+    .plus_mark {
+        width: 20px;
+        height: 20px;
+    }
+    .link_mark {
+        width: 20px;
+        height: 20px;
+    }
+    .instagram_logo {
+        margin: 0;
+    }
+    .instagram_logo img {
+        width: 20px;
+        height: 20px;
+    }
 }
 /*works_01.html-レスポンシブ412px~*/
 @media screen and (max-width: 412px) {
-    .works_00 ul {
+    /*.works_00 ul {
         display: block;
         padding: 100px 0 70px 0;
-    }
+    }*/
     .works_00-title {
         margin-top: 20px;
         font-size: 25px;
@@ -2104,14 +2127,6 @@ img {
         margin-left: 5vw; /*158/1366*100*/
         margin-bottom: 20px;
         font-size: 17px;
-    }
-    .plus_mark {
-        width: 20px;
-        height: 20px;
-    }
-    .link_mark {
-        width: 20px;
-        height: 20px;
     }
 }
 
