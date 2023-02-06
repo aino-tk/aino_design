@@ -1,5 +1,6 @@
 @charset "utf-8";
 @import url(http://fonts.googleapis.com/earlyaccess/notosansjp.css);
+@import url("https://fonts.googleapis.com/css2?family=Sacramento&display=swap");
 
 /* cssリセット */
 
@@ -398,6 +399,8 @@ img {
     font-size: 61px; /*61/1366*100*/
     line-height: 1.75; /*107/61*/
     color: #0094ff;
+    font-family: "Homemade Apple", cursive;
+    /*font-family: "Sacramento", cursive;*/
 }
 .subtitle {
     font-size: 17px;
