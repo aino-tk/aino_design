@@ -747,6 +747,7 @@ img {
 /*works.html-3_Works_作品実績*/
 .works-contents3 {
     padding-top: 150px;
+    padding-bottom: 40px;
 }
 .works-works_menu {
     width: 80.8vw; /*1105/1366*100*/
@@ -1028,7 +1029,7 @@ img {
     background-position: center center; /*画像を常に天地左右中央配置*/
     /*background-size: contain;*/
     background-size: cover; /*表示する大きさに基づいて背景画像を調整*/
-    /*padding-bottom: 40px;*/
+    padding-bottom: 40px;
 }
 .contents4_footer_nav {
     top: 0;
@@ -2036,6 +2037,7 @@ img {
     /*3_Works_作品実績*/
     .works-contents3 {
         padding-top: 50px;
+        padding-bottom: 40px;
     }
     /*works.index-トップへ戻るボタン*/
     .page-top {
